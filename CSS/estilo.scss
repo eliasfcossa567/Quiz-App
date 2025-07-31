@@ -64,6 +64,7 @@
                 border: 1px solid white;
                 margin-top: 5px;
                 background: green;
+                margin-bottom: 5px;
                 p{
                     margin: 5px;
                 }
@@ -74,9 +75,9 @@
             display: flex;
             flex-flow: row wrap;
             margin-top: 30px;
-            justify-content: space-between;
-            margin-left: 5%;
-            margin-right: 5%;
+            justify-content: space-around;
+            margin-left: 15%;
+            margin-right: 15%;
             font-size: 2rem;
             
             .idea{
@@ -102,6 +103,16 @@
                 padding: 5px;
                 border-radius: 30%;
                 background: rgb(25, 47, 172);
+            }
+        }
+        .pontuacao{
+            display: flex;
+            flex-flow: row wrap;
+            font-size: 1.5rem;
+            justify-content: center;
+            margin-top: 20px;
+            .ponto{
+                margin-left: 10px;
             }
         }
     }
