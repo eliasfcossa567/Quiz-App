@@ -65,4 +65,37 @@
 }
 * body main .opcoes .opc-D p {
   margin: 5px;
+}
+* body footer {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 30px;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 2rem;
+}
+* body footer .idea {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 30%;
+  background: rgb(25, 47, 172);
+}
+* body footer .duas-opc {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 30%;
+  background: rgb(25, 47, 172);
+}
+* body footer .ajuda {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 30%;
+  background: rgb(25, 47, 172);
+}
+* body footer .troca {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 30%;
+  background: rgb(25, 47, 172);
 }/*# sourceMappingURL=estilo.css.map */

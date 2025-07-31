@@ -70,5 +70,39 @@
             }
         }
         }
+         footer{
+            display: flex;
+            flex-flow: row wrap;
+            margin-top: 30px;
+            justify-content: space-between;
+            margin-left: 5%;
+            margin-right: 5%;
+            font-size: 2rem;
+            
+            .idea{
+                border: 2px solid white;
+                padding: 5px;
+                border-radius: 30%;
+                background: rgb(25, 47, 172);
+            }
+            .duas-opc{
+                border: 2px solid white;
+                padding: 5px;
+                border-radius: 30%;
+                background: rgb(25, 47, 172);
+            }
+            .ajuda{
+                border: 2px solid white;
+                padding: 5px;
+                border-radius: 30%;
+                background: rgb(25, 47, 172);
+            }
+            .troca{
+                border: 2px solid white;
+                padding: 5px;
+                border-radius: 30%;
+                background: rgb(25, 47, 172);
+            }
+        }
     }
 }
