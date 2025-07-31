@@ -7,8 +7,9 @@
         background-color: #040e42;
         color: white;
         
-        .pergunta{
-            border: 1px solid red;
+        header{
+            .pergunta{
+            border: 1px solid white;
             padding: 5px;
             margin-top: 10px;
             margin-left: 5%;
@@ -17,6 +18,57 @@
             height: auto;
             font-size: 1rem;
             text-align: center;
+            border-radius: 5%;
+            }
+        }
+        main{
+            .opcoes{
+            border: 1px solid white;
+            padding: 5px;
+            margin-top: 10px;
+            margin-left: 5%;
+            margin-right: 5%;
+            width: 90%;
+            height: auto;
+            .opc-A{
+                display: flex;
+                flex-flow: row wrap;
+                border: 1px solid white;
+                margin-top: 5px;
+                p{
+                    margin: 5px;
+                }
+            }
+            .opc-B{
+                display: flex;
+                flex-flow: row wrap;
+                border: 1px solid white;
+                margin-top: 5px;
+                background: red;
+                p{
+                    margin: 5px;
+                }
+            }
+            .opc-C{
+                display: flex;
+                flex-flow: row wrap;
+                border: 1px solid white;
+                margin-top: 5px;
+                p{
+                    margin: 5px;
+                }
+            }
+            .opc-D{
+                display: flex;
+                flex-flow: row wrap;
+                border: 1px solid white;
+                margin-top: 5px;
+                background: green;
+                p{
+                    margin: 5px;
+                }
+            }
+        }
         }
     }
 }

@@ -7,8 +7,8 @@
   background-color: #040e42;
   color: white;
 }
-* body .pergunta {
-  border: 1px solid red;
+* body header .pergunta {
+  border: 1px solid white;
   padding: 5px;
   margin-top: 10px;
   margin-left: 5%;
@@ -17,4 +17,52 @@
   height: auto;
   font-size: 1rem;
   text-align: center;
+  border-radius: 5%;
+}
+* body main .opcoes {
+  border: 1px solid white;
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  height: auto;
+}
+* body main .opcoes .opc-A {
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid white;
+  margin-top: 5px;
+}
+* body main .opcoes .opc-A p {
+  margin: 5px;
+}
+* body main .opcoes .opc-B {
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid white;
+  margin-top: 5px;
+  background: red;
+}
+* body main .opcoes .opc-B p {
+  margin: 5px;
+}
+* body main .opcoes .opc-C {
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid white;
+  margin-top: 5px;
+}
+* body main .opcoes .opc-C p {
+  margin: 5px;
+}
+* body main .opcoes .opc-D {
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid white;
+  margin-top: 5px;
+  background: green;
+}
+* body main .opcoes .opc-D p {
+  margin: 5px;
 }/*# sourceMappingURL=estilo.css.map */
