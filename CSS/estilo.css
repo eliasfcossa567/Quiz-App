@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+* body {
+  margin: 0;
+  padding: 0;
+  background-color: #040e42;
+  color: white;
+}
+* body .pergunta {
+  border: 1px solid red;
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  height: auto;
+}/*# sourceMappingURL=estilo.css.map */
