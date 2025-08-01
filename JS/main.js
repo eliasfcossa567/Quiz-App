@@ -7,10 +7,29 @@ const perguntas = [
 ];
 
 let headerPergunta = document.getElementById('campo-pergunta');
+let mainOpcoes = document.getElementById('campo-opcoes');
 
-let campoPergunta = `
-    <div class="pergunta">
-        <h1>${perguntas[0].pergunta}</h1>
-    </div>
-`;
+let campoPergunta = `<h1>${perguntas[0].pergunta}`;
 headerPergunta.innerHTML = campoPergunta;
+
+let campoOpcoes = `<button class="opc-A">
+                <p>A.</p>
+                <p>${perguntas[0].opcoes[0]
+                }</p>
+            </button>
+            <button class="opc-B">
+                <p>B.</p>
+                <p>${perguntas[0].opcoes[1]
+                }</p>
+            </button>
+            <button class="opc-C">
+                <p>C.</p>
+                <p>${perguntas[0].opcoes[2]
+                }</p>
+            </button>
+            <button class="opc-D">
+                <p>D.</p>
+                <p>${perguntas[0].opcoes[3]
+                }</p>
+            </button>`;
+mainOpcoes.innerHTML = campoOpcoes;

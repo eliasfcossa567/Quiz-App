@@ -29,6 +29,7 @@
   height: auto;
 }
 * body main .opcoes .opc-A {
+  cursor: pointer;
   color: white;
   font-family: "Times New Roman", Times, serif;
   width: 100%;
@@ -42,6 +43,7 @@
   margin: 5px;
 }
 * body main .opcoes .opc-B {
+  cursor: pointer;
   color: white;
   font-family: "Times New Roman", Times, serif;
   width: 100%;
@@ -55,6 +57,7 @@
   margin: 5px;
 }
 * body main .opcoes .opc-C {
+  cursor: pointer;
   color: white;
   font-family: "Times New Roman", Times, serif;
   width: 100%;
@@ -63,11 +66,13 @@
   flex-flow: row wrap;
   border: 1px solid white;
   margin-top: 5px;
+  background: green;
 }
 * body main .opcoes .opc-C p {
   margin: 5px;
 }
 * body main .opcoes .opc-D {
+  cursor: pointer;
   color: white;
   font-family: "Times New Roman", Times, serif;
   width: 100%;
@@ -75,7 +80,7 @@
   flex-flow: row wrap;
   border: 1px solid white;
   margin-top: 5px;
-  background: green;
+  background: none;
   margin-bottom: 5px;
 }
 * body main .opcoes .opc-D p {
