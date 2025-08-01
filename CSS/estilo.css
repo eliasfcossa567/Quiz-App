@@ -29,6 +29,10 @@
   height: auto;
 }
 * body main .opcoes .opc-A {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  width: 100%;
+  background: none;
   display: flex;
   flex-flow: row wrap;
   border: 1px solid white;
@@ -38,6 +42,9 @@
   margin: 5px;
 }
 * body main .opcoes .opc-B {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   border: 1px solid white;
@@ -48,6 +55,10 @@
   margin: 5px;
 }
 * body main .opcoes .opc-C {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  width: 100%;
+  background: none;
   display: flex;
   flex-flow: row wrap;
   border: 1px solid white;
@@ -57,6 +68,9 @@
   margin: 5px;
 }
 * body main .opcoes .opc-D {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   border: 1px solid white;
@@ -74,28 +88,24 @@
   justify-content: space-around;
   margin-left: 15%;
   margin-right: 15%;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 * body footer .idea {
-  border: 2px solid white;
   padding: 5px;
   border-radius: 30%;
   background: rgb(25, 47, 172);
 }
 * body footer .duas-opc {
-  border: 2px solid white;
   padding: 5px;
   border-radius: 30%;
   background: rgb(25, 47, 172);
 }
 * body footer .ajuda {
-  border: 2px solid white;
   padding: 5px;
   border-radius: 30%;
   background: rgb(25, 47, 172);
 }
 * body footer .troca {
-  border: 2px solid white;
   padding: 5px;
   border-radius: 30%;
   background: rgb(25, 47, 172);

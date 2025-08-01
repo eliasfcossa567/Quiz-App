@@ -23,53 +23,67 @@
         }
         main{
             .opcoes{
-            border: 1px solid white;
-            padding: 5px;
-            margin-top: 10px;
-            margin-left: 5%;
-            margin-right: 5%;
-            width: 90%;
-            height: auto;
-            .opc-A{
-                display: flex;
-                flex-flow: row wrap;
                 border: 1px solid white;
-                margin-top: 5px;
-                p{
-                    margin: 5px;
+                padding: 5px;
+                margin-top: 10px;
+                margin-left: 5%;
+                margin-right: 5%;
+                width: 90%;
+                height: auto;
+                .opc-A{
+                    color: white;
+                    font-family: 'Times New Roman', Times, serif;
+                    width: 100%;
+                    background: none;
+                    display: flex;
+                    flex-flow: row wrap;
+                    border: 1px solid white;
+                    margin-top: 5px;
+                    p{
+                        margin: 5px;
+                    }
+                }
+                .opc-B{
+                    color: white;
+                    font-family: 'Times New Roman', Times, serif;
+                    width: 100%;
+                    display: flex;
+                    flex-flow: row wrap;
+                    border: 1px solid white;
+                    margin-top: 5px;
+                    background: red;
+                    p{
+                        margin: 5px;
+                    }
+                }
+                .opc-C{
+                    color: white;
+                    font-family: 'Times New Roman', Times, serif;
+                    width: 100%;
+                    background: none;
+                    display: flex;
+                    flex-flow: row wrap;
+                    border: 1px solid white;
+                    margin-top: 5px;
+                    p{
+                        margin: 5px;
+                    }
+                }
+                .opc-D{
+                    color: white;
+                    font-family: 'Times New Roman', Times, serif;
+                    width: 100%;
+                    display: flex;
+                    flex-flow: row wrap;
+                    border: 1px solid white;
+                    margin-top: 5px;
+                    background: green;
+                    margin-bottom: 5px;
+                    p{
+                        margin: 5px;
+                    }
                 }
             }
-            .opc-B{
-                display: flex;
-                flex-flow: row wrap;
-                border: 1px solid white;
-                margin-top: 5px;
-                background: red;
-                p{
-                    margin: 5px;
-                }
-            }
-            .opc-C{
-                display: flex;
-                flex-flow: row wrap;
-                border: 1px solid white;
-                margin-top: 5px;
-                p{
-                    margin: 5px;
-                }
-            }
-            .opc-D{
-                display: flex;
-                flex-flow: row wrap;
-                border: 1px solid white;
-                margin-top: 5px;
-                background: green;
-                margin-bottom: 5px;
-                p{
-                    margin: 5px;
-                }
-            }
-        }
         }
          footer{
             display: flex;
@@ -78,28 +92,28 @@
             justify-content: space-around;
             margin-left: 15%;
             margin-right: 15%;
-            font-size: 2rem;
+            font-size: 1.5rem;
             
             .idea{
-                border: 2px solid white;
+                //border: 2px solid white;
                 padding: 5px;
                 border-radius: 30%;
                 background: rgb(25, 47, 172);
             }
             .duas-opc{
-                border: 2px solid white;
+                //border: 2px solid white;
                 padding: 5px;
                 border-radius: 30%;
                 background: rgb(25, 47, 172);
             }
             .ajuda{
-                border: 2px solid white;
+                //border: 2px solid white;
                 padding: 5px;
                 border-radius: 30%;
                 background: rgb(25, 47, 172);
             }
             .troca{
-                border: 2px solid white;
+                //border: 2px solid white;
                 padding: 5px;
                 border-radius: 30%;
                 background: rgb(25, 47, 172);
