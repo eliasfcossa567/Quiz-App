@@ -1,17 +1,7 @@
-import { Pergunta } from "./Pergunta.js";
-
-const perguntas = [
-    new Pergunta("Qual é a capital de Moçambique?", ["Nampula", "Cabo Delgado", "Maputo", "Inhambane"], "Maputo"),
-    new Pergunta("A soma dos quadrados dos catetos é igual ao quadrado da hipotenusa. Este teorema pertence à?", ["Arquimedes", "Pitágoras", "Bháskara", "Newton"], "Pitágoras"),
-    new Pergunta("Qual linguagem é usada para estilizar páginas web?", ["HTML", "CSS", "Javascript", "Python"], "CSS")
-];
+import { perguntas } from "./perguntas.js";
 
 let headerPergunta = document.getElementById('campo-pergunta');
 let mainOpcoes = document.getElementById('campo-opcoes');
-
-let campoPergunta = `<h1>${perguntas[0].pergunta}`;
-headerPergunta.innerHTML = campoPergunta;
-
 
 // Função para embaralhar um array (Fisher-Yates)
 function embaralhar(array) {
@@ -22,8 +12,14 @@ function embaralhar(array) {
     return array;
 }
 
-// Gera as opções embaralhadas para a pergunta atual
-const opcoesAleatorias = embaralhar([...perguntas[0].opcoes]);
+// Embaralha as perguntas
+const perguntasAleatorias = embaralhar([...perguntas]);
+// Exibe a primeira pergunta embaralhada
+let campoPergunta = `<h1>${perguntasAleatorias[0].pergunta}`;
+headerPergunta.innerHTML = campoPergunta;
+
+// Gera as opções embaralhadas para a pergunta atual (primeira do array embaralhado)
+const opcoesAleatorias = embaralhar([...perguntasAleatorias[0].opcoes]);
 
 // Monta os botões de opção usando as opções embaralhadas
 let campoOpcoes = "";
@@ -47,22 +43,33 @@ Explicação dos passos:
 
 // Função para verificar se a opção clicada está correta
 function certoOuErrado(botao) {
-    // Pega o texto da opção clicada
-    let textoOpcao = botao.querySelector('.nomeOpcao').textContent;
-
-    // Verifica se está correta usando o método da classe Pergunta
-    if (perguntas[0].verificarResposta(textoOpcao)) {
-        botao.classList.add('correcta');
-    } else {
-        botao.classList.add('errada');
-        // Destaca a opção correta
-        let textoOpcoes = document.querySelectorAll('.nomeOpcao');
-        for (let i = 0; i < textoOpcoes.length; i++) {
-            if (textoOpcoes[i].textContent === perguntas[0].correcta) {
-                textoOpcoes[i].parentElement.classList.add('correcta');
-            }
+    // Efeito de piscar
+    let contaPiscas = 0;
+    let piscaMax = 6; // 6 piscadas (3 vezes)
+    let piscando = setInterval(() => {
+        botao.classList.toggle('pisca'); // toggle: efeito ligar/desligar. Ele adiciona e remove a classe pisca
+        contaPiscas++;
+        if (contaPiscas >= piscaMax) {
+            clearInterval(piscando);
+            botao.classList.remove('pisca');
+            // Após piscar, aguarda 0.2s e mostra o resultado
+            setTimeout(() => {
+                let textoOpcao = botao.querySelector('.nomeOpcao').textContent;
+                if (perguntasAleatorias[0].verificarResposta(textoOpcao)) {
+                    botao.classList.add('correcta');
+                } else {
+                    botao.classList.add('errada');
+                    // Destaca a opção correta
+                    let textoOpcoes = document.querySelectorAll('.nomeOpcao');
+                    for (let i = 0; i < textoOpcoes.length; i++) {
+                        if (textoOpcoes[i].textContent === perguntasAleatorias[0].correcta) {
+                            textoOpcoes[i].parentElement.classList.add('correcta');
+                        }
+                    }
+                }
+            }, 200);
         }
-    }
+    }, 200);
 }
 window.certoOuErrado = certoOuErrado;
 
