@@ -6,11 +6,14 @@ Aplicação web de perguntas e respostas (quiz) desenvolvida em JavaScript, HTML
 
 Inspirada no jogo "Quem quer ser rico?", o objetivo é evoluir o projeto até atingir todas as funcionalidades do jogo original.
 
+
 ### Funcionalidades atuais:
 - 10 perguntas embaralhadas a cada execução.
 - As opções de resposta também são embaralhadas.
 - Ao clicar em uma opção, o botão pisca antes de mostrar o resultado.
 - Após o tempo ou resposta, a opção correta é destacada automaticamente.
+- O quiz avança automaticamente para a próxima pergunta após cada resposta.
+- O usuário ganha 10 pontos a cada resposta correta, com a pontuação exibida na tela.
 
 Esta é a versão básica, mas há planos futuros para adicionar funcionalidades como modo multiplayer e efeitos sonoros.
 

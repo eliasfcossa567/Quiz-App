@@ -1,7 +1,12 @@
 import { perguntas } from "./perguntas.js";
 
+
 let headerPergunta = document.getElementById('campo-pergunta');
 let mainOpcoes = document.getElementById('campo-opcoes');
+let pontosSpan = document.getElementById('pontos');
+let indicePergunta = 0;
+let pontos = 0;
+const perguntasAleatorias = embaralhar([...perguntas]);
 
 // Função para embaralhar um array (Fisher-Yates)
 function embaralhar(array) {
@@ -12,26 +17,35 @@ function embaralhar(array) {
     return array;
 }
 
-// Embaralha as perguntas
-const perguntasAleatorias = embaralhar([...perguntas]);
-// Exibe a primeira pergunta embaralhada
-let campoPergunta = `<h1>${perguntasAleatorias[0].pergunta}`;
-headerPergunta.innerHTML = campoPergunta;
 
-// Gera as opções embaralhadas para a pergunta atual (primeira do array embaralhado)
-const opcoesAleatorias = embaralhar([...perguntasAleatorias[0].opcoes]);
-
-// Monta os botões de opção usando as opções embaralhadas
-let campoOpcoes = "";
-for (let i = 0; i < opcoesAleatorias.length; i++) {
-    campoOpcoes += `
-        <button onclick="certoOuErrado(this)" id="opc-${String.fromCharCode(65 + i)}" class="opc">
-            <p>${String.fromCharCode(65 + i)}.</p>
-            <p class="nomeOpcao">${opcoesAleatorias[i]}</p>
-        </button>
-    `;
+function renderizarPergunta() {
+    if (indicePergunta >= perguntasAleatorias.length) {
+        headerPergunta.innerHTML = '<h1>Quiz finalizado!</h1>';
+        mainOpcoes.innerHTML = '';
+        return;
+    }
+    let perguntaAtual = perguntasAleatorias[indicePergunta];
+    headerPergunta.innerHTML = `<h1>${perguntaAtual.pergunta}`;
+    const opcoesAleatorias = embaralhar([...perguntaAtual.opcoes]);
+    let campoOpcoes = "";
+    for (let i = 0; i < opcoesAleatorias.length; i++) {
+        campoOpcoes += `
+            <button onclick="certoOuErrado(this)" id="opc-${String.fromCharCode(65 + i)}" class="opc">
+                <p>${String.fromCharCode(65 + i)}.</p>
+                <p class="nomeOpcao">${opcoesAleatorias[i]}</p>
+            </button>
+        `;
+    }
+    mainOpcoes.innerHTML = campoOpcoes;
 }
-mainOpcoes.innerHTML = campoOpcoes;
+
+function atualizarPontuacao() {
+    if (pontosSpan) pontosSpan.textContent = pontos;
+}
+
+// Inicializa a primeira pergunta e pontuação
+renderizarPergunta();
+atualizarPontuacao();
 
 /*
 Explicação dos passos:
@@ -47,7 +61,7 @@ function certoOuErrado(botao) {
     let contaPiscas = 0;
     let piscaMax = 6; // 6 piscadas (3 vezes)
     let piscando = setInterval(() => {
-        botao.classList.toggle('pisca'); // toggle: efeito ligar/desligar. Ele adiciona e remove a classe pisca
+        botao.classList.toggle('pisca');
         contaPiscas++;
         if (contaPiscas >= piscaMax) {
             clearInterval(piscando);
@@ -55,18 +69,27 @@ function certoOuErrado(botao) {
             // Após piscar, aguarda 0.2s e mostra o resultado
             setTimeout(() => {
                 let textoOpcao = botao.querySelector('.nomeOpcao').textContent;
-                if (perguntasAleatorias[0].verificarResposta(textoOpcao)) {
+                let perguntaAtual = perguntasAleatorias[indicePergunta];
+                let acertou = perguntaAtual.verificarResposta(textoOpcao);
+                if (acertou) {
                     botao.classList.add('correcta');
+                    pontos += 10;
+                    atualizarPontuacao();
                 } else {
                     botao.classList.add('errada');
                     // Destaca a opção correta
                     let textoOpcoes = document.querySelectorAll('.nomeOpcao');
                     for (let i = 0; i < textoOpcoes.length; i++) {
-                        if (textoOpcoes[i].textContent === perguntasAleatorias[0].correcta) {
+                        if (textoOpcoes[i].textContent === perguntaAtual.correcta) {
                             textoOpcoes[i].parentElement.classList.add('correcta');
                         }
                     }
                 }
+                // Espera 1s e vai para a próxima pergunta
+                setTimeout(() => {
+                    indicePergunta++;
+                    renderizarPergunta();
+                }, 1000);
             }, 200);
         }
     }, 200);

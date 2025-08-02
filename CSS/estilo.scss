@@ -103,6 +103,16 @@
                 #opc-D.correcta { background: green; }
                 #opc-D.errada { background: red; }
             }
+            #pontuacao{
+            display: flex;
+            flex-flow: row wrap;
+            font-size: 1.5rem;
+            justify-content: center;
+            margin-top: 20px;
+            .ponto{
+                margin-left: 10px;
+            }
+        }
         }
          footer{
             display: flex;
@@ -136,16 +146,6 @@
                 padding: 5px;
                 border-radius: 30%;
                 background: rgb(25, 47, 172);
-            }
-        }
-        .pontuacao{
-            display: flex;
-            flex-flow: row wrap;
-            font-size: 1.5rem;
-            justify-content: center;
-            margin-top: 20px;
-            .ponto{
-                margin-left: 10px;
             }
         }
     }

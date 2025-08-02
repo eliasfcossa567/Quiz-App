@@ -114,6 +114,16 @@
 * body main .opcoes #opc-D.errada {
   background: red;
 }
+* body main #pontuacao {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 1.5rem;
+  justify-content: center;
+  margin-top: 20px;
+}
+* body main #pontuacao .ponto {
+  margin-left: 10px;
+}
 * body footer {
   display: flex;
   flex-flow: row wrap;
@@ -142,14 +152,4 @@
   padding: 5px;
   border-radius: 30%;
   background: rgb(25, 47, 172);
-}
-* body .pontuacao {
-  display: flex;
-  flex-flow: row wrap;
-  font-size: 1.5rem;
-  justify-content: center;
-  margin-top: 20px;
-}
-* body .pontuacao .ponto {
-  margin-left: 10px;
 }/*# sourceMappingURL=estilo.css.map */
