@@ -51,7 +51,7 @@
   flex-flow: row wrap;
   border: 1px solid white;
   margin-top: 5px;
-  background: red;
+  background: none;
 }
 * body main .opcoes #opc-B p {
   margin: 5px;
@@ -66,7 +66,6 @@
   flex-flow: row wrap;
   border: 1px solid white;
   margin-top: 5px;
-  background: green;
 }
 * body main .opcoes #opc-C p {
   margin: 5px;
@@ -85,6 +84,30 @@
 }
 * body main .opcoes #opc-D p {
   margin: 5px;
+}
+* body main .opcoes #opc-A.correcta {
+  background: green;
+}
+* body main .opcoes #opc-A.errada {
+  background: red;
+}
+* body main .opcoes #opc-B.correcta {
+  background: green;
+}
+* body main .opcoes #opc-B.errada {
+  background: red;
+}
+* body main .opcoes #opc-C.correcta {
+  background: green;
+}
+* body main .opcoes #opc-C.errada {
+  background: red;
+}
+* body main .opcoes #opc-D.correcta {
+  background: green;
+}
+* body main .opcoes #opc-D.errada {
+  background: red;
 }
 * body footer {
   display: flex;

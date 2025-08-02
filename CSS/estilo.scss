@@ -30,7 +30,7 @@
                 margin-right: 5%;
                 width: 90%;
                 height: auto;
-                #opc-A{
+                #opc-A {
                     cursor: pointer;
                     color: white;
                     font-family: 'Times New Roman', Times, serif;
@@ -40,11 +40,11 @@
                     flex-flow: row wrap;
                     border: 1px solid white;
                     margin-top: 5px;
-                    p{
+                    p {
                         margin: 5px;
                     }
                 }
-                #opc-B{
+                #opc-B {
                     cursor: pointer;
                     color: white;
                     font-family: 'Times New Roman', Times, serif;
@@ -53,12 +53,12 @@
                     flex-flow: row wrap;
                     border: 1px solid white;
                     margin-top: 5px;
-                    background: red;
-                    p{
+                    background: none;
+                    p {
                         margin: 5px;
                     }
                 }
-                #opc-C{
+                #opc-C {
                     cursor: pointer;
                     color: white;
                     font-family: 'Times New Roman', Times, serif;
@@ -68,12 +68,11 @@
                     flex-flow: row wrap;
                     border: 1px solid white;
                     margin-top: 5px;
-                    background: green;
-                    p{
+                    p {
                         margin: 5px;
                     }
                 }
-                #opc-D{
+                #opc-D {
                     cursor: pointer;
                     color: white;
                     font-family: 'Times New Roman', Times, serif;
@@ -84,10 +83,20 @@
                     margin-top: 5px;
                     background: none;
                     margin-bottom: 5px;
-                    p{
+                    p {
                         margin: 5px;
                     }
                 }
+
+                // Correção: classes correcta e errada aplicadas diretamente ao botão
+                #opc-A.correcta { background: green; }
+                #opc-A.errada { background: red; }
+                #opc-B.correcta { background: green; }
+                #opc-B.errada { background: red; }
+                #opc-C.correcta { background: green; }
+                #opc-C.errada { background: red; }
+                #opc-D.correcta { background: green; }
+                #opc-D.errada { background: red; }
             }
         }
          footer{

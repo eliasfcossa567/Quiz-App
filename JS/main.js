@@ -29,9 +29,9 @@ const opcoesAleatorias = embaralhar([...perguntas[0].opcoes]);
 let campoOpcoes = "";
 for (let i = 0; i < opcoesAleatorias.length; i++) {
     campoOpcoes += `
-        <button id="opc-${String.fromCharCode(65 + i)}" class="opc">
+        <button onclick="certoOuErrado(this)" id="opc-${String.fromCharCode(65 + i)}" class="opc">
             <p>${String.fromCharCode(65 + i)}.</p>
-            <p>${opcoesAleatorias[i]}</p>
+            <p class="nomeOpcao">${opcoesAleatorias[i]}</p>
         </button>
     `;
 }
@@ -45,10 +45,33 @@ Explicação dos passos:
 4. O HTML dos botões é inserido no elemento mainOpcoes, exibindo as opções de forma aleatória e sem repetições.
 */
 
-//função para verificar se a resposta está correcta
-function certoOuErrado(){
-    if(perguntas[0].verificarResposta = true){
-        
+// Função para verificar se a opção clicada está correta
+function certoOuErrado(botao) {
+    // Pega o texto da opção clicada
+    let textoOpcao = botao.querySelector('.nomeOpcao').textContent;
+
+    // Verifica se está correta usando o método da classe Pergunta
+    if (perguntas[0].verificarResposta(textoOpcao)) {
+        botao.classList.add('correcta');
+    } else {
+        botao.classList.add('errada');
+        // Destaca a opção correta
+        let textoOpcoes = document.querySelectorAll('.nomeOpcao');
+        for (let i = 0; i < textoOpcoes.length; i++) {
+            if (textoOpcoes[i].textContent === perguntas[0].correcta) {
+                textoOpcoes[i].parentElement.classList.add('correcta');
+            }
+        }
     }
 }
+window.certoOuErrado = certoOuErrado;
+
+/*
+Explicação da lógica:
+1. O onclick dos botões agora chama certoOuErrado(this), passando o botão clicado como argumento.
+2. Dentro da função, pegamos o texto da opção clicada usando querySelector('.nomeOpcao').textContent.
+3. Usamos o método verificarResposta da classe Pergunta para comparar o texto com a resposta correta.
+4. Se estiver correta, adiciona a classe 'correcta' ao botão; se não, adiciona 'errado'.
+Assim, apenas o botão clicado é marcado, e a verificação é feita corretamente.
+*/
 

@@ -33,9 +33,4 @@ export class Pergunta {
         this._correcta = novaCorrecta;
     }
 
-    randomOpcoes(opc){
-        let indiceSorteado = Math.floor(Math.random()*opc.length);
-
-        return indiceSorteado;
-    }
 }
