@@ -124,7 +124,7 @@
 * body main #pontuacao .ponto {
   margin-left: 10px;
 }
-* body footer {
+* body .ferramentas {
   display: flex;
   flex-flow: row wrap;
   margin-top: 30px;
@@ -133,22 +133,22 @@
   margin-right: 15%;
   font-size: 1.5rem;
 }
-* body footer .idea {
+* body .ferramentas #idea {
   padding: 5px;
   border-radius: 30%;
   background: rgb(25, 47, 172);
 }
-* body footer .duas-opc {
+* body .ferramentas #duas-opc {
   padding: 5px;
   border-radius: 30%;
   background: rgb(25, 47, 172);
 }
-* body footer .ajuda {
+* body .ferramentas #ajuda {
   padding: 5px;
   border-radius: 30%;
   background: rgb(25, 47, 172);
 }
-* body footer .troca {
+* body .ferramentas #troca {
   padding: 5px;
   border-radius: 30%;
   background: rgb(25, 47, 172);

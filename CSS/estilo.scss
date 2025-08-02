@@ -114,7 +114,7 @@
             }
         }
         }
-         footer{
+         .ferramentas{
             display: flex;
             flex-flow: row wrap;
             margin-top: 30px;
@@ -123,25 +123,25 @@
             margin-right: 15%;
             font-size: 1.5rem;
             
-            .idea{
+            #idea{
                 //border: 2px solid white;
                 padding: 5px;
                 border-radius: 30%;
                 background: rgb(25, 47, 172);
             }
-            .duas-opc{
+            #duas-opc{
                 //border: 2px solid white;
                 padding: 5px;
                 border-radius: 30%;
                 background: rgb(25, 47, 172);
             }
-            .ajuda{
+            #ajuda{
                 //border: 2px solid white;
                 padding: 5px;
                 border-radius: 30%;
                 background: rgb(25, 47, 172);
             }
-            .troca{
+            #troca{
                 //border: 2px solid white;
                 padding: 5px;
                 border-radius: 30%;

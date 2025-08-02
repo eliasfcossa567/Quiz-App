@@ -7,6 +7,10 @@ let pontosSpan = document.getElementById('pontos');
 let indicePergunta = 0;
 let pontos = 0;
 const perguntasAleatorias = embaralhar([...perguntas]);
+let btnIdea = document.getElementById('idea');
+let btnDuasOpc = document.getElementById('duas-opc');
+let btnAjuda = document.getElementById('ajuda');
+let btnTroca = document.getElementById('troca');
 
 // Função para embaralhar um array (Fisher-Yates)
 function embaralhar(array) {
@@ -105,3 +109,61 @@ Explicação da lógica:
 Assim, apenas o botão clicado é marcado, e a verificação é feita corretamente.
 */
 
+//funções para as ferramentas:
+
+// Idea: mostra a correta e avança para próxima questão
+const ideaF = () => {
+    let perguntaAtual = perguntasAleatorias[indicePergunta];
+    let textoOpcoes = document.querySelectorAll('.nomeOpcao');
+    for (let i = 0; i < textoOpcoes.length; i++) {
+        if (textoOpcoes[i].textContent === perguntaAtual.correcta) {
+            textoOpcoes[i].parentElement.classList.add('correcta');
+        }
+    }
+    setTimeout(() => {
+        indicePergunta++;
+        renderizarPergunta();
+    }, 1000);
+};
+if (btnIdea) btnIdea.onclick = ideaF;
+
+// Duas Opc: remove duas opções erradas
+const duasOpcF = () => {
+    let perguntaAtual = perguntasAleatorias[indicePergunta];
+    let textoOpcoes = document.querySelectorAll('.nomeOpcao');
+    let erradas = [];
+    for (let i = 0; i < textoOpcoes.length; i++) {
+        if (textoOpcoes[i].textContent !== perguntaAtual.correcta) {
+            erradas.push(textoOpcoes[i]);
+        }
+    }
+    // Remove (esconde) duas erradas aleatórias
+    embaralhar(erradas).slice(0, 2).forEach(el => {
+        el.parentElement.style.visibility = 'hidden';
+    });
+};
+if (btnDuasOpc) btnDuasOpc.onclick = duasOpcF;
+
+// Ajuda: simula votação (mostra porcentagem maior na correta)
+const ajudaF = () => {
+    let perguntaAtual = perguntasAleatorias[indicePergunta];
+    let textoOpcoes = document.querySelectorAll('.nomeOpcao');
+    let votos = [10, 20, 30, 40];
+    embaralhar(votos);
+    for (let i = 0; i < textoOpcoes.length; i++) {
+        let voto = votos.pop();
+        if (textoOpcoes[i].textContent === perguntaAtual.correcta) {
+            textoOpcoes[i].parentElement.innerHTML += `<span class='voto' style='color:yellow;font-weight:bold;'> ${Math.max(...votos, voto)}%</span>`;
+        } else {
+            textoOpcoes[i].parentElement.innerHTML += `<span class='voto' style='color:yellow;'> ${voto}%</span>`;
+        }
+    }
+};
+if (btnAjuda) btnAjuda.onclick = ajudaF;
+
+// Troca: troca para próxima questão sem pontuar
+const trocaF = () => {
+    indicePergunta++;
+    renderizarPergunta();
+};
+if (btnTroca) btnTroca.onclick = trocaF;
